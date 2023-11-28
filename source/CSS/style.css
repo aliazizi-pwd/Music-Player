@@ -1,0 +1,24 @@
+/* Start code style for HTML page */
+/* reset css */
+* {
+     padding: 0;
+     margin: 0;
+     box-sizing: border-box;
+}
+/* style body */
+body {
+     width: 100%;
+     height: 100vh;
+     background: #8E2DE2;
+     background: -webkit-linear-gradient(to bottom, #4A00E0, #8E2DE2);
+     background: linear-gradient(to bottom, #4A00E0, #8E2DE2); 
+}
+
+
+/* player Box Main */
+.player-box {
+     width: 600px;
+     height: 70vh;
+     margin-top: 100px;
+     box-shadow: rgba(0, 0, 0, 0.19) 0px 10px 20px, rgba(0, 0, 0, 0.23) 0px 6px 6px;
+}
