@@ -17,7 +17,7 @@ body {
 
 /* player Box Main */
 .player-box {
-     width: 600px;
+     width: 500px;
      height: 70vh;
      margin-top: 100px;
      box-shadow: rgba(0, 0, 0, 0.19) 0px 10px 20px, rgba(0, 0, 0, 0.23) 0px 6px 6px;
@@ -25,6 +25,29 @@ body {
 }
 
 .image-cover {
+     width: 350px;
+     height: 300px;
      transform: translateY(2px);
      transition: all 0.3s ease-in-out;
+}
+
+/* progress Time and Progress Bar Time */
+.progress-time {
+     height: 3px;
+     background-color: #4A00E0;
+}
+.progress-time-bar {
+     width: 0%;
+     height: 3px;
+     background-color: #dc143c;
+     position: relative;
+}
+button > i:hover {
+     transition: all 0.3s ease-in-out;
+     color: #000;
+}
+
+button > i.dangers:hover {
+     transition: all 0.2s ease-in-out;
+     color: #dc143c;
 }

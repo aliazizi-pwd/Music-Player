@@ -16,7 +16,7 @@
 <body>
      <!-- box music Player -->
      <section id="player">
-          <div class="d-flex justify-content-center align-items-center">
+          <div class="container d-flex justify-content-center align-items-center">
                <div class="player-box bg-body-tertiary rounded-3">
                     <div class="box-main container d-flex flex-column position-relative">
                          <div class="d-flex flex-row justify-content-between align-items-center mt-2">
@@ -25,19 +25,34 @@
                          </div>
                          <!-- image cover Music currentlly -->
                          <div class="d-flex flex-column justify-content-center align-items-center">
-                              <img src="./public/image/img-cover-1.jpg" class="image-cover img-fluid w-50 h-50 mt-5 rounded-3 p-1" alt="cover">
-                         </div>
-                         <!-- duration time and Current time -->
-                         <div class="timeLine w-50 mx-auto d-flex flex-row justify-content-between align-items-center mt-2">
-                              <span class="durationTime fs-5">00:00</span>
-                              <span class="currentTime fs-5">00:00</span>
+                              <img src="./public/image/img-cover-1.jpg" class="image-cover mt-5 rounded-5 p-1" alt="cover">
                          </div>
                          <!-- display time line -->
+                         <div class="progress-time w-75 mx-auto mt-5 rounded-3">
+                              <div class="progress-time-bar rounded-3"></div>
+                         </div>
+                         <!-- duration time and Current time -->
+                         <div class="timeLine w-75 mx-auto d-flex flex-row justify-content-between align-items-center mt-1">
+                              <span class="durationTime fs-6">00:00</span>
+                              <span class="currentTime fs-6">00:00</span>
+                         </div>
+                         <!-- section Data Music -->
+                         <div class="d-flex flex-column justify-content-center align-items-center">
+                              <h4 class="name-song fs-5 pt-2">Nistametoon</h4>
+                              <h4 class="name-song fs-6 fst-italic text-danger pb-2">MohammadReza Shayea</h4>
+                         </div>
+                         <!-- section button's Music Player -->
+                         <div class="container d-flex flex-row justify-content-center align-items-center mt-3">
+                              <button class="btn-heart btn border-0 text-secondary"><i class="fa fa-1x fa-heart dangers"></i></button>
+                              <button class="btn-Previous btn border-0 text-secondary"><i class="fa fa-3x fa-backward"></i></button>
+                              <button class="btn-play btn border-0 text-secondary"><i class="fa fa-3x fa-play-circle"></i></button>
+                              <button class="btn-next btn border-0 text-secondary"><i class="fa fa-3x fa-forward"></i></button>
+                              <button class="btn-repeat btn border-0 text-secondary"><i class="fa fa-1x fa-repeat dangers"></i></button>
+                         </div>
                     </div>
                </div>
           </div>
      </section>
-
      <script src="./source/JavaScript/app.js"></script>
      <script src="./package/bootstrap.min.js"></script>
      <script src="./package/anime.min.js"></script>
