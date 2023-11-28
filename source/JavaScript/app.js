@@ -49,8 +49,6 @@ const listSong = [
 // play Music :-
 function getPlayMusicHandler () {
      btnPlay.innerHTML = `<i class="fa fa-3x fa-pause-circle"></i>`;
-     currentlly = listSong[countSong].src;
-     audio.setAttribute("src" , currentlly);
      audio.play();
      isPlay = true;
 }
@@ -66,10 +64,10 @@ function getPauseMusicHandler () {
 function getCheckMusicHandler () {
      if (isPlay) {
           getPauseMusicHandler();
-          console.log("pause" , isPlay);
+          // play play - isplay : true
      } else {
           getPlayMusicHandler();
-          console.log("play" , isPlay);
+          // pause music - isplay : false
      }
 }
 
