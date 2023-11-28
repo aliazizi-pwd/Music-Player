@@ -2,4 +2,3 @@
 // select element document => $ 
 let $ = document;
 // select element 
-
