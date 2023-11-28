@@ -22,3 +22,31 @@ body {
      margin-top: 100px;
      box-shadow: rgba(0, 0, 0, 0.19) 0px 10px 20px, rgba(0, 0, 0, 0.23) 0px 6px 6px;
 }
+
+/* side bar list music */
+.sideBar-list {
+     /* 500px */
+     width: 0px;
+     height: 70vh;
+     position: absolute;
+     top: 0;
+     right: -502px;
+     transform: scale(1.1);
+     transition: all 0.3s ease-in-out;
+     opacity: 0;
+}
+.sideBar-list.active {
+     opacity: 1;
+     transition: all 0.3s ease-in-out;
+     transform: scale(1.1);
+}
+
+.image-cover-playList {
+     width: 100px;
+     height: 100px;
+     cursor: pointer;
+}
+.play-song {
+     cursor: pointer;
+}
+/* .... */

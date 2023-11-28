@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
      <meta charset="UTF-8">
      <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -7,20 +8,80 @@
      <link rel="image icon" href="./public/image/icon-image-title.png">
      <link rel="stylesheet" href="./source/CSS/style.css">
      <link rel="stylesheet" href="./package/bootstrap.min.css">
-     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" integrity="sha512-9usAa10IRO0HhonpyAIVpjrylPvoDwiPUiKdWk5t3PyolY1cOd4DSE0Ga+ri4AuTroPR5aQvXU9xC6qOPnzFeg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
+          integrity="sha512-9usAa10IRO0HhonpyAIVpjrylPvoDwiPUiKdWk5t3PyolY1cOd4DSE0Ga+ri4AuTroPR5aQvXU9xC6qOPnzFeg=="
+          crossorigin="anonymous" referrerpolicy="no-referrer" />
 </head>
+
 <body>
      <!-- box music Player -->
      <section id="player">
           <div class="d-flex justify-content-center align-items-center">
                <div class="player-box bg-body-tertiary rounded-3">
-                    
+                    <div class="box-main container d-flex flex-column position-relative">
+                         <div class="d-flex flex-row justify-content-between align-items-center mt-2">
+                              <h1 class="fs-6">Music Player</h1>
+                              <button class="click-sidebar btn border-0"><i class="fa fa-bars"></i></button>
+                         </div>
+                         <div class="sideBar-list bg-body-secondary rounded-3 d-none">
+                              <div class="d-flex flex-column">
+                                   <div class="container d-flex justify-content-between align-items-center mt-2">
+                                        <h2 class="fs-6">playList Music</h2>
+                                        <button class="click-close btn border-0 text-danger"><i
+                                                  class="fa fa-close"></i></button>
+                                   </div>
+                                   <div
+                                        class="play-list container d-flex flex-column justify-content-start align-items-center">
+                                        <div
+                                             class="item-music w-100 h-50 bg-body d-flex flex-row justify-content-between align-items-center mt-2">
+                                             <div>
+                                                  <img src="./public/image/img-cover-1.jpg" alt="cover"
+                                                       class="image-cover-playList position-relative">
+                                                  <span class="play-song ms-2" data-name="song-1"><i
+                                                            class="fa fa-2x fa-play-circle"></i></span>
+                                             </div>
+                                             <div class="d-flex flex-column">
+                                                  <span class="name-music fs-6 fst-italic">Nistametoon</span>
+                                                  <span class="name-songer fs-6 fst-italic">MohammadReza Shayea</span>
+                                             </div>
+                                        </div>
+                                        <div
+                                             class="item-music w-100 h-50 bg-body d-flex flex-row justify-content-between align-items-center mt-2">
+                                             <div>
+                                                  <img src="./public/image/img-cover-2.jpg" alt="cover"
+                                                       class="image-cover-playList position-relative">
+                                                  <span class="play-song ms-2" data-name="song-1"><i
+                                                            class="fa fa-2x fa-play-circle"></i></span>
+                                             </div>
+                                             <div class="d-flex flex-column">
+                                                  <span class="name-music fs-6 fst-italic">Khiz</span>
+                                                  <span class="name-songer fs-6 fst-italic">MohammadReza Shayea</span>
+                                             </div>
+                                        </div>
+                                        <div
+                                             class="item-music w-100 h-50 bg-body d-flex flex-row justify-content-between align-items-center mt-2">
+                                             <div>
+                                                  <img src="./public/image/img-cover-3.jpg" alt="cover"
+                                                       class="image-cover-playList position-relative">
+                                                  <span class="play-song ms-2" data-name="song-1"><i
+                                                            class="fa fa-2x fa-play-circle"></i></span>
+                                             </div>
+                                             <div class="d-flex flex-column">
+                                                  <span class="name-music fs-6 fst-italic">Man Asbaniam</span>
+                                                  <span class="name-songer fs-6 fst-italic">MohammadReza Shayea</span>
+                                             </div>
+                                        </div>
+                                   </div>
+                              </div>
+                         </div>
+                    </div>
                </div>
           </div>
      </section>
-     
+
      <script src="./source/JavaScript/app.js"></script>
      <script src="./package/bootstrap.min.js"></script>
      <script src="./package/anime.min.js"></script>
 </body>
+
 </html>
