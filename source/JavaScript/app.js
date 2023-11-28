@@ -33,7 +33,7 @@ const listSong = [
           id:2,
           nameSong:"Khiz",
           nameSonger:"MohammadReza Shayea",
-          src:"./music/01-Khiz.mp3",
+          src:"./music/02-Khiz.mp3",
           coverIMG:"./public/image/img-cover-2.jpg",
      },
      {
@@ -72,5 +72,36 @@ function getCheckMusicHandler () {
 }
 
 
+// next music :-
+function getNextMusicHandler () {
+     countSong++;
+     if (countSong > listSong.length - 1) {
+          countSong = 0;
+     }
+     currentlly = listSong[countSong].src;
+     audio.setAttribute("src" , currentlly);
+     audio.play();
+     isPlay = true;
+     btnPlay.innerHTML = `<i class="fa fa-3x fa-pause-circle"></i>`;
+} 
+
+
+// previous music :-
+function getPreviousMusicHandler () {
+     countSong--;
+     if (countSong < 0) {     
+          countSong = listSong.length - 1;
+     } 
+     currentlly = listSong[countSong].src;
+     audio.setAttribute("src" , currentlly);
+     audio.play();
+     isPlay = true;
+     btnPlay.innerHTML = `<i class="fa fa-3x fa-pause-circle"></i>`;
+}
+
+
+
 // add EventListener for msuic Playr :-
 btnPlay.addEventListener("click" , getCheckMusicHandler);
+btnNext.addEventListener("click" , getNextMusicHandler);
+btnPrevious.addEventListener("click" , getPreviousMusicHandler);
