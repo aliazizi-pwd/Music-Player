@@ -1,6 +1,8 @@
 //* get start code javascript from music player...
 //* select element document => $ && select element let
 let $ = document;
+//* variable Flag defining
+let isPlay = false; 
 //* select element Const
 const coverMusic = $.querySelector(".image-cover");
 const audio = $.querySelector("audio");
