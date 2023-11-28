@@ -3,6 +3,8 @@
 let $ = document;
 //* variable Flag defining
 let isPlay = false; 
+let countSong = 0;
+let currentlly = "";
 //* select element Const
 const coverMusic = $.querySelector(".image-cover");
 const audio = $.querySelector("audio");
@@ -14,7 +16,7 @@ const nameSonger = $.querySelector(".name-songer");
 //* selecte button's music player
 const btnHeart = $.querySelector(".btn-heart");
 const btnPrevious = $.querySelector(".btn-Previous");
-const btnPlay = $.querySelector(".btn-Play");
+const btnPlay = $.querySelector(".btn-play");
 const btnNext = $.querySelector(".btn-next");
 const btnRepeat = $.querySelector(".btn-repeat");
 
@@ -44,7 +46,33 @@ const listSong = [
 ];
 
 
+// play Music :-
+function getPlayMusicHandler () {
+     btnPlay.innerHTML = `<i class="fa fa-3x fa-pause-circle"></i>`;
+     currentlly = listSong[countSong].src;
+     audio.setAttribute("src" , currentlly);
+     audio.play();
+     isPlay = true;
+}
 
-// function getPlayMusicHandler () {
-//      btnPlay.innerHTML = `<i class="fa fa-3x fa-pause-circle"></i>`;
-// }
+// pause Music :-
+function getPauseMusicHandler () {
+     btnPlay.innerHTML = `<i class="fa fa-3x fa-play-circle"></i>`;
+     audio.pause();
+     isPlay = false;
+}
+
+// what is playing or paused :-
+function getCheckMusicHandler () {
+     if (isPlay) {
+          getPauseMusicHandler();
+          console.log("pause" , isPlay);
+     } else {
+          getPlayMusicHandler();
+          console.log("play" , isPlay);
+     }
+}
+
+
+// add EventListener for msuic Playr :-
+btnPlay.addEventListener("click" , getCheckMusicHandler);
