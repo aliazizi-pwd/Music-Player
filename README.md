@@ -3,7 +3,7 @@ Coding and development of a relatively professional music player using raw JavaS
 
 
 ## Preview
-<img width=100% src="./public/image/demo.png">
+<img width=40% src="./public/image/demo.png">
 
 ## Checklist Features
 
