@@ -83,6 +83,8 @@ function getNextMusicHandler () {
      audio.play();
      isPlay = true;
      btnPlay.innerHTML = `<i class="fa fa-3x fa-pause-circle"></i>`;
+     // invoked
+     loadDescriptionSongHandler(countSong);
 } 
 
 
@@ -97,6 +99,17 @@ function getPreviousMusicHandler () {
      audio.play();
      isPlay = true;
      btnPlay.innerHTML = `<i class="fa fa-3x fa-pause-circle"></i>`;
+     // invoked 
+     loadDescriptionSongHandler(countSong);
+}
+
+
+
+// load Description Song or Music :-    
+function loadDescriptionSongHandler (count) {
+     coverMusic.src = listSong[count].coverIMG;
+     nameSong.innerHTML = listSong[count].nameSong;
+     nameSonger.innerHTML = listSong[count].nameSonger;
 }
 
 
