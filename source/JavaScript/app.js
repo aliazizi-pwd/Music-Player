@@ -113,8 +113,40 @@ function loadDescriptionSongHandler (count) {
 }
 
 
+// time update audio Currently playing :- 
+function getTimeUpdateHandler (e) {
+     if (isPlay) {
+          // progress update Time bar :- --> 1%.....100%
+          let durationTime = e.srcElement.duration;
+          let currentTime = e.srcElement.currentTime;
+          let progressBar = (currentTime / durationTime) * 100;
+
+          progressTimeLine.style.width = `${progressBar.toFixed(0)}%`;
+
+          // process duration,current time update :-
+          // (durationTime) The whole time of the music :
+          let durationMinutes = Math.floor((durationTime / 60));  // convert seconds to minutes
+          let durationSeconds = Math.floor((durationTime % 60));   // return time all seconds audio
+
+          // durationMinutes < 10 : +0 && durationSeconds < 10 : +0
+          if (durationMinutes < 10) {
+               durationMinutes = `0${durationMinutes}`;
+          } else if (durationSeconds < 10) {
+               durationSeconds = `0${durationSeconds}`;
+          }
+          
+          // fixed bug or display show NAN 
+          if (durationSeconds) {
+               console.log("The whole time of the music :" + durationMinutes + ":" + durationSeconds);
+               displayDurationTime.innerHTML = `${durationMinutes}:${durationSeconds}`;
+          }
+
+     }
+}
+
 
 // add EventListener for msuic Playr :-
 btnPlay.addEventListener("click" , getCheckMusicHandler);
 btnNext.addEventListener("click" , getNextMusicHandler);
 btnPrevious.addEventListener("click" , getPreviousMusicHandler);
+audio.addEventListener("timeupdate" , getTimeUpdateHandler);
