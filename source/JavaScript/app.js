@@ -8,6 +8,7 @@ let currentlly = "";
 //* select element Const
 const coverMusic = $.querySelector(".image-cover");
 const audio = $.querySelector("audio");
+const progress = $.querySelector(".progress-time");
 const progressTimeLine = $.querySelector(".progress-time-bar");
 const displayDurationTime = $.querySelector(".durationTime");
 const displayCurrentTime = $.querySelector(".currentTime");
@@ -123,25 +124,46 @@ function getTimeUpdateHandler (e) {
 
           progressTimeLine.style.width = `${progressBar.toFixed(0)}%`;
 
-          // process duration,current time update :-
+          // process duration time update :-
           // (durationTime) The whole time of the music :
           let durationMinutes = Math.floor((durationTime / 60));  // convert seconds to minutes
           let durationSeconds = Math.floor((durationTime % 60));   // return time all seconds audio
 
           // durationMinutes < 10 : +0 && durationSeconds < 10 : +0
-          if (durationMinutes < 10) {
-               durationMinutes = `0${durationMinutes}`;
-          } else if (durationSeconds < 10) {
-               durationSeconds = `0${durationSeconds}`;
-          }
+          durationMinutes < 10 ? durationMinutes = `0${durationMinutes}` : null;
+          durationSeconds < 10 ? durationSeconds = `0${durationSeconds}` : null;
+
           
           // fixed bug or display show NAN 
           if (durationSeconds) {
-               console.log("The whole time of the music :" + durationMinutes + ":" + durationSeconds);
+               // console.log("The whole time of the music :" + durationMinutes + ":" + durationSeconds);
                displayDurationTime.innerHTML = `${durationMinutes}:${durationSeconds}`;
           }
 
+          // process current time update :-
+          // (currentTime) 
+          let currentMinutes = Math.floor((currentTime / 60));  // convert seconds to minutes -> current time music "Minute"
+          let currentSeconds = Math.floor((currentTime % 60));  // return time all seconds -> current time music "seconds"
+          
+          // currentMinutes < 10 : +0 && currentSeconds < 10 : +0
+          currentMinutes < 10 ? currentMinutes = `0${currentMinutes}` : null;
+          currentSeconds < 10 ? currentSeconds = `0${currentSeconds}` : null;
+          
+          // fixed bug or display show NAN 
+          if (currentSeconds) {
+               displayCurrentTime.innerHTML = `${currentMinutes}:${currentSeconds}`;
+          }
      }
+}
+
+
+// click progressbar Handler
+function getClickProgressHandler (e) {
+     let widthLine = this.clientWidth; // client width : size of progress 357px
+     let clickX = e.offsetX;           // click -> x : size click x 
+     let durationTime = audio.duration;
+
+     audio.currentTime = (clickX / widthLine) * durationTime;     
 }
 
 
@@ -150,3 +172,4 @@ btnPlay.addEventListener("click" , getCheckMusicHandler);
 btnNext.addEventListener("click" , getNextMusicHandler);
 btnPrevious.addEventListener("click" , getPreviousMusicHandler);
 audio.addEventListener("timeupdate" , getTimeUpdateHandler);
+progress.addEventListener("click" , getClickProgressHandler);

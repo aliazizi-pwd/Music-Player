@@ -31,12 +31,13 @@ body {
 
 /* progress Time and Progress Bar Time */
 .progress-time {
-     height: 3px;
+     height: 5px;
      background-color: #4A00E0;
+     cursor: pointer;
 }
 .progress-time-bar {
      width: 0%;
-     height: 3px;
+     height: 5px;
      background-color: #dc143c;
      position: relative;
 }
