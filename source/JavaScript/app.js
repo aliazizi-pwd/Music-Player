@@ -153,6 +153,16 @@ function getTimeUpdateHandler (e) {
           if (currentSeconds) {
                displayCurrentTime.innerHTML = `${currentMinutes}:${currentSeconds}`;
           }
+
+          // Repeat music :-
+          let repeat = 1000;
+          if (btnRepeat.querySelector("i").classList.contains("repeat")) {
+               if (progressTimeLine.style.width === "100%") {
+                    for (let i = 0; i < repeat; i++) {
+                         getPlayMusicHandler();
+                    }                    
+               }
+          }    
      }
 }
 
@@ -167,9 +177,16 @@ function getClickProgressHandler (e) {
 }
 
 
+// Click ON Repeat Handler
+function getRepeatMusicHandler (e) {
+     btnRepeat.querySelector("i").classList.toggle("repeat");
+}
+
+
 // add EventListener for msuic Playr :-
 btnPlay.addEventListener("click" , getCheckMusicHandler);
 btnNext.addEventListener("click" , getNextMusicHandler);
 btnPrevious.addEventListener("click" , getPreviousMusicHandler);
 audio.addEventListener("timeupdate" , getTimeUpdateHandler);
 progress.addEventListener("click" , getClickProgressHandler);
+btnRepeat.addEventListener("click" , getRepeatMusicHandler);

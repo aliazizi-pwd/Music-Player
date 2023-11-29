@@ -25,7 +25,6 @@ body {
 .image-cover {
      width: 350px;
      height: 300px;
-     transform: translateY(2px);
      transition: all 0.3s ease-in-out;
 }
 
@@ -47,6 +46,11 @@ button > i:hover {
 }
 
 button > i.dangers:hover {
+     transition: all 0.2s ease-in-out;
+     color: #8E2DE2;
+}
+/* class repeat */
+button > i.repeat {
      transition: all 0.2s ease-in-out;
      color: #dc143c;
 }
